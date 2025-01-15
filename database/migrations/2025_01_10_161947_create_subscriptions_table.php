@@ -15,8 +15,8 @@ return new class extends Migration
             $table->id();
             $table->unsignedInteger('user_id');
             $table->foreign('user_id')->references('id')->references('user');
-            $table->unsignedInteger('start');
-            $table->unsignedInteger('end');
+            $table->date('start');
+            $table->date('end');
             $table->timestamps();
         });
     }
