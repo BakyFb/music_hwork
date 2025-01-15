@@ -13,6 +13,10 @@ return new class extends Migration
     {
         Schema::create('playlists', function (Blueprint $table) {
             $table->id();
+            $table->unsignedInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('user');
+            $table->string('name');
+            $table->string('image')->nullable();
             $table->timestamps();
         });
     }
